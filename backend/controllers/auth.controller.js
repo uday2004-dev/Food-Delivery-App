@@ -9,5 +9,7 @@ async function registerController(req,res) {
       return  res.status(400).json({
             message:"User aleady exits"
         })
+
+     
     }
 }
