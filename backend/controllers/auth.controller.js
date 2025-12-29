@@ -1,4 +1,5 @@
 const userModels=require("../src/models/user.model")
+const bcryptjs=require("bcryptjs")
         
 async function registerController(req,res) {
     const {fullName,email,password}=req.body;
@@ -9,7 +10,11 @@ async function registerController(req,res) {
       return  res.status(400).json({
             message:"User aleady exits"
         })
-
-     
     }
+    const hashedPassword=await bcrypt.hash(password,10);
+    const user=await userModel.create({
+        fullName,
+        email,
+        password:hashedPassword
+    })
 }
