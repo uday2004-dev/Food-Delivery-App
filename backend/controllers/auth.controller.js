@@ -1,4 +1,4 @@
-const userModels=require("../src/models/user.model")
+const userModel=require("../src/models/user.model")
 const bcryptjs=require("bcryptjs")
 const jwt =require('jsonwebtoken')
 
@@ -10,10 +10,11 @@ async function registerController(req,res) {
     })
     if(isUserAlreadyExists){
       return  res.status(400).json({
-            message:"User aleady exits"
+            message:"User aleady exists"
         })
     }
     const hashedPassword=await bcrypt.hash(password,10);
+    
     const user=await userModel.create({
         fullName,
         email,

@@ -12,8 +12,8 @@ const userSchema = new mongoose.Schema({
     , password: {
         type: String,
     },
-
 },
+
     {
         typestamps: true
     }
