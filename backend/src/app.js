@@ -11,6 +11,6 @@ app.get("/", (req, res) => {
   res.send("Home page");
 });
 
-app.use("/api/user", authRoutes);
+app.use("/api/auth", authRoutes);
 
 module.exports = app;
