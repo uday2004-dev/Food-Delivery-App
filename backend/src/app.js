@@ -1,14 +1,16 @@
-//create server
+const express = require("express");
+const cookieparser = require("cookie-parser");
+const authRoutes = require("../routes/auth.routes");
 
-const express =require("express")
-const cookieparser=require('cookie-parser')
-const authRoutes=require("../routes/auth.routes")
-const app=express()
+const app = express();
 
-app.use(cookieparser())
+app.use(cookieparser());
+app.use(express.json());
 
-app.use(express.json())
-app.get("/",(req,res)=>{
-    res.send("Home page")
-})
-module.exports=app;
+app.get("/", (req, res) => {
+  res.send("Home page");
+});
+
+app.use("/api/user", authRoutes);
+
+module.exports = app;
