@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const connectDb = () => {
-  mongoose.connect('mongodb://127.0.0.1:27017/food-view')
+  mongoose.connect(process.env.MONGODB_URI)
 
   
   .then(() => {
