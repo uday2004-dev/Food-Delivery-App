@@ -5,7 +5,7 @@
             required:true,
 
         },
-        emails:{
+        email:{
             type:String,
             required:true,
             unique:true,
@@ -13,6 +13,9 @@
         password:{
             type:String,
             requires:true,
-            
+
         }
     })
+
+    const foodPartnerModel=mongoose.model("foodpartner",foodPartnerSchema);
+    module.exports=foodPartnerModel;
