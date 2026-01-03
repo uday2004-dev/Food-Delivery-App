@@ -180,9 +180,12 @@ function logoutFoodPartner(req,res){
 }
 
 module.exports = {
+//user functions
   registerUser,
   loginUser,
   logoutUser,
+
+  //food-partner function
   loginFoodPartner,
   registerFoodPartner,
   logoutFoodPartner,
