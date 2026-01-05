@@ -25,7 +25,15 @@ router.get('/user/logout',authController.logoutUser)
 
 
 
-router.post("/food-partner/register",authController.registerFoodPartner)
+router.post(
+  "/food-partner/register",
+  (req, res, next) => {
+    console.log("✅ REGISTER ROUTE HIT");
+    next();
+  },
+  authController.registerFoodPartner
+);
+// router.post("/food-partner/register",authController.registerFoodPartner)
 router.post("/food-partner/login",authController.loginFoodPartner)
 router.get("/food-partner/logoutpartner",authController.logoutFoodPartner)
 
